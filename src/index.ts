@@ -9,8 +9,8 @@ const plugin: Plugin<AST> = {
       name: "VCL",
       parsers: ["vcl-parse"],
       extensions: [".vcl"],
-      // vscodeLanguageIds: ["vcl"],
-      // linguistLanguageId: 384,
+      vscodeLanguageIds: ["vcl"],
+      linguistLanguageId: 384,
     },
   ],
   parsers: {
