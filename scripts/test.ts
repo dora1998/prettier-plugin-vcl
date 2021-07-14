@@ -1,15 +1,11 @@
 import prettier from "prettier";
-const code = `
-sub vcl_recv {
-declare local var.vacelinDebug STRING;
-set var.vacelineDebug = "initial";
+import fs from "fs";
+import path from "path";
 
-if (req.http.Vacelin:Some == "Some") {
-    add var.vacelinDebug = "Vacelin Debug Log";
-  }
-}
-`;
+const code = fs
+  .readFileSync(path.join(__dirname, "../examples/boilerplate.vcl"))
+  .toString();
 prettier.format(code, {
-  parser: "vcl",
+  parser: "vcl-parse",
   plugins: ["."],
 });
