@@ -4,7 +4,6 @@ import { printNode } from "vaceline/dist/generator/printAST";
 import { AST } from "./types";
 
 function print(path: AstPath<Program>): Doc {
-  console.log(path);
   return printNode(path.getValue(), {
     lineNum: 1,
   });
