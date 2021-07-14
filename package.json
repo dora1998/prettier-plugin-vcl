@@ -28,6 +28,6 @@
     "prettier": "^2.2.1"
   },
   "dependencies": {
-    "vaceline": "link:../vaceline"
+    "vaceline": "https://github.com/dora1998/vaceline.git#build-with-declaration-files"
   }
 }
