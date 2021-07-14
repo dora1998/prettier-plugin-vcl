@@ -1,29 +1,27 @@
 import type { Plugin } from "prettier";
+import { parser } from "./parser";
+import { printer } from "./printer";
+import { AST } from "./types";
 
-// TODO
-const parser: any = {};
-const printer: any = {};
-
-const plugin: Plugin<any> = {
+const plugin: Plugin<AST> = {
   languages: [
     {
       name: "VCL",
-      parsers: ["vcl"],
+      parsers: ["vcl-parse"],
       extensions: [".vcl"],
-      vscodeLanguageIds: ["vcl"],
-      linguistLanguageId: 384,
+      // vscodeLanguageIds: ["vcl"],
+      // linguistLanguageId: 384,
     },
   ],
   parsers: {
-    vcl: parser,
+    "vcl-parse": parser,
   },
   printers: {
-    vcl: printer,
+    "vcl-ast": printer,
   },
   defaultOptions: {
-    printWidth: 80,
     tabWidth: 2,
   },
 };
 
-export default plugin;
+module.exports = plugin;
